@@ -1,4 +1,3 @@
-import { getDefaultNormalizer } from "@testing-library/react"
 
 const initialState = [
     {
@@ -18,6 +17,9 @@ const initialState = [
 
 const contactReducer = (state=initialState, action)=>{
     switch(action.type){
+        case 'Add_Contact':
+            state = [...state, action.payload]
+            return state;
         default:
             return state; 
     }
